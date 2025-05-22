@@ -20,10 +20,28 @@ const app = express();
 // Common Middleware
 app.use(
   cors({
-    origin: ["http://localhost:3001", "http://127.0.0.1:3001"],
+    origin: [
+      "http://localhost:3001",
+      "http://127.0.0.1:3001",
+      process.env.PRODUCTION_URL || "https://dreamstories-backend.vercel.app/", // Add your Vercel URL here
+    ].filter(Boolean),
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+// Add CORS preflight
+app.options("*", cors());
+
+// Handle CORS errors
+app.use((err, req, res, next) => {
+  if (err.name === "CORSError") {
+    res.status(403).json({ error: "CORS error", details: err.message });
+  } else {
+    next(err);
+  }
+});
 
 // Configure static file serving
 app.use(
