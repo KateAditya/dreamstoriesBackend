@@ -203,7 +203,7 @@ app.use("/payment", paymentRoute);
 // ==================== PROTECTED ROUTES ====================
 
 // Protected admin pages
-app.get("/adi/admin.html", checkAuth, (req, res) => {
+app.get("/2admin.html", checkAuth, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "admin.html"));
 });
 
@@ -425,3 +425,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server is running on port ${PORT}`);
 });
+
+module.exports = app;
