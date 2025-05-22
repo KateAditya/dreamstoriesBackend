@@ -109,12 +109,6 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Environment Check for Razorpay keys
-if (!process.env.RAZORPAY_ID_KEY || !process.env.RAZORPAY_SECRET_KEY) {
-  console.error("❌ Missing Razorpay API keys. Set them in .env");
-  process.exit(1);
-}
-
 // File upload configuration
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -196,9 +190,6 @@ app.post("/api/logout", (req, res) => {
 });
 
 // ==================== PAYMENT ROUTES ====================
-
-// Payment routes from the first app.js
-app.use("/payment", paymentRoute);
 
 // ==================== PROTECTED ROUTES ====================
 
@@ -421,9 +412,19 @@ app.use((err, req, res, next) => {
 // Determine port with fallback
 const PORT = process.env.PORT || 3000;
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`✅ Server is running on port ${PORT}`);
-});
+// Start server after database connection is established
+const startServer = async () => {
+  try {
+    await db.testConnection();
+    app.listen(PORT, () => {
+      console.log(`✅ Server is running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  }
+};
+
+startServer();
 
 module.exports = app;

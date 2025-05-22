@@ -14,16 +14,23 @@ const pool = mysql.createPool({
 // Convert pool to use promises
 const promisePool = pool.promise();
 
-// Test the connection
-pool.getConnection((err, connection) => {
-  if (err) {
-    console.error("❌ Database connection failed:", err.message);
-    return;
-  }
-  console.log("✅ Connected to MySQL Database");
-  connection.release();
-});
+// Function to test database connection
+const testConnection = () => {
+  return new Promise((resolve, reject) => {
+    pool.getConnection((err, connection) => {
+      if (err) {
+        console.error("❌ Database connection failed:", err.message);
+        reject(err);
+        return;
+      }
+      console.log("✅ Connected to MySQL Database");
+      connection.release();
+      resolve();
+    });
+  });
+};
 
-// Export both regular pool and promise pool
+// Export pool, promise pool, and connection test
 module.exports = pool;
 module.exports.promise = promisePool;
+module.exports.testConnection = testConnection;
