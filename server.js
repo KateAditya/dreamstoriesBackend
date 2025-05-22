@@ -203,7 +203,7 @@ app.use("/payment", paymentRoute);
 // ==================== PROTECTED ROUTES ====================
 
 // Protected admin pages
-app.get("/admin.html", checkAuth, (req, res) => {
+app.get("/adi/admin.html", checkAuth, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "admin.html"));
 });
 
