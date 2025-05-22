@@ -1,0 +1,5 @@
+# Created by Vercel CLI
+PORT="3001"
+RAZORPAY_ID_KEY="rzp_live_GPXbMkmvJ7Vjc8"
+RAZORPAY_SECRET_KEY="TiGJbTprepXUmvVIk3zl43BM"
+PORT1="3000"

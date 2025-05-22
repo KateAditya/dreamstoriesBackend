@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Download is Starting...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        a.button,
+        a#manualDownload {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a.button:hover,
+        a#manualDownload:hover {
+            background-color: #0056b3;
+        }
+
+        .back-home {
+            background-color: #28a745;
+        }
+
+        .back-home:hover {
+            background-color: #1e7e34;
+        }
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            a.button,
+            a#manualDownload {
+                width: 80%;
+                padding: 14px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Your download should start automatically. <br>If not, <a id="manualDownload" class="button" href="#">click here
+            to download manually.</a></h2>
+
+    <a href="index.html" class="button back-home">⬅ Back to Home</a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const file = urlParams.get('file');
+
+        if (file) {
+            const a = document.createElement("a");
+            a.href = file;
+            a.setAttribute("download", file.split('/').pop());
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            document.getElementById("manualDownload").href = file;
+        } else {
+            document.body.innerHTML = "<h3>Download link missing!</h3><a href='/' class='button back-home'>⬅ Back to Home</a>";
+        }
+    </script>
+</body>
+
+</html>

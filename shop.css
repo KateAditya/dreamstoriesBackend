@@ -1,0 +1,91 @@
+.shop-heading {
+    color: rgb(7, 8, 8);
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Lighter glass effect to resemble glacier */
+    font-size: 60px;
+    font-weight: 900;
+    padding: 20px 50px;
+    border-radius: 10px;
+    text-shadow: 3px 3px 10px rgb(255, 255, 255);
+    letter-spacing: 5px;
+    display: inline-block;
+    box-shadow: 0px 0px 30px rgb(0, 0, 0);
+    /* Slightly stronger glow */
+    font-family: 'Poppins', sans-serif;
+    margin-top: 60px;
+    backdrop-filter: blur(15px);
+    /* Glacier-like blur */
+    border: 2px solid rgb(5, 4, 4);
+    /* Frosty border effect */
+    transition: box-shadow 0.3s ease;
+    
+}
+
+/* Typewriting effect applied to text */
+.typewriter-text {
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid rgb(239, 217, 18);
+    /* Cursor effect */
+    animation: typing 2s steps(30) 0.02s 1 normal both, blinkCaret 0.75s step-end infinite, restartTyping 0s 3s infinite;
+    /* Start after 3s delay and loop */
+}
+
+/* Typewriting animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Cursor blinking effect */
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Add the restart typing effect */
+@keyframes restartTyping {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+/* Hover effect */
+.shop-heading:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .shop-heading {
+        font-size: 40px;
+        padding: 15px 30px;
+        letter-spacing: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shop-heading {
+        font-size: 30px;
+        padding: 10px 20px;
+        letter-spacing: 2px;
+    }
+
+    .successURLView{
+        position: relative;
+        top: -20px;
+    }
+
+}

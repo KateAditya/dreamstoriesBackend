@@ -1,0 +1,64 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Logs
+logs
+*.log
+logs/
+debug.log
+npm-debug.log
+yarn-debug.log
+pnpm-debug.log
+lerna-debug.log
+*.log.*
+
+# Vercel specific
+.vercel
+.vercel_cache
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.iml
+
+# Build files
+dist/
+build/
+.cache/
+out/
+.next/
+.next/cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Miscellaneous
+*.bak
+*.pid
+*.seed
+*.pid.lock
+coverage/
+.env*.local
+
+vercel.json

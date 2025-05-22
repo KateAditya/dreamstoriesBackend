@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="albums.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="~/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2.1/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+    <title>Albums</title>
+</head>
+
+<body>
+
+    <div id="page-loader">
+        <img src="DREAM STORIES PNG LOGO_2.png" alt="Loading..." class="loader-image">
+    </div>
+
+
+      <nav
+            style="position: fixed; top: 0; left: 0; width: 100%; z-index: 100; background-attachment: fixed; background-color: rgb(255, 255, 255);">
+            <div class="logo" style="margin-left:0px;">
+                <h1>DREAM STORIES</h1>
+                <p>GRAPHICS DESIGN</p>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="menu" style="margin-right: 0%;">
+                <a href="index.html" style="font-weight: bold;">Shop</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="razorpay.html">T&C</a>
+                <a href="#">Admin</a>
+            </div>
+
+            <!-- Hamburger Button for Mobile -->
+            <div class="hamburger" id="menu-btn" aria-label="Toggle menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (hidden by default) -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" style="font-weight: bold;">Shop</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="razorpay.html">T&C</a>
+            <a href="#">Admin</a>
+        </div>
+
+
+        <style>
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 32px;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .logo {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin: 0;
+            }
+
+            .logo p {
+                font-size: 0.75rem;
+                font-weight: bold;
+                margin: 4px 0 0 0;
+            }
+
+            .menu {
+                display: flex;
+                gap: 16px;
+            }
+
+            .menu a {
+                text-decoration: none;
+                /* Remove underline */
+                color: black;
+                /* Set color to black */
+                font-weight: 600;
+            }
+
+            .menu a:hover {
+                color: #333;
+                /* Darker shade on hover */
+            }
+
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .hamburger div {
+                width: 24px;
+                height: 3px;
+                background-color: #4a4a4a;
+                margin: 4px 0;
+                transition: background-color 0.3s ease;
+                /* Smooth transition for hamburger lines */
+            }
+
+            .mobile-menu {
+                display: none;
+                /* Initially hidden */
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px;
+                border-bottom: 1px solid #e5e5e5;
+                opacity: 0;
+                /* Start hidden */
+                transform: translateY(-10px);
+                /* Start slightly above */
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                /* Smooth transition for menu */
+                margin-top: 130px;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+                /* Show the menu */
+                opacity: 1;
+                /* Fade in */
+                transform: translateY(0);
+                /* Move to original position */
+            }
+
+            .mobile-menu.hide {
+                opacity: 0;
+                /* Fade out */
+                transform: translateY(-10px);
+                /* Move slightly up */
+            }
+
+            .mobile-menu a {
+                text-decoration: none;
+                /* Remove underline */
+                color: black;
+                /* Set color to black */
+                font-weight: 600;
+            }
+
+            .mobile-menu a:hover {
+                color: #333;
+                /* Darker shade on hover */
+            }
+
+            @media (max-width: 768px) {
+                .menu {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: flex;
+                }
+            }
+        </style>
+
+
+    <section class="youtube-section">
+        <h2>Albums</h2>
+        <p>Dream Stories Graphics Design specializes in creating visually captivating narratives that bring ideas to
+            life.</p>
+
+        <div class="youtube-grid">
+            <div class="youtube-video"
+                onclick="window.open('https://drive.google.com/file/d/155Xq-zVS-d3rqBcCZ6qofFNgvyXdKTXK/view?usp=sharing')">
+                <img src="DEMO ALBUM IMAGES/PROCUCT IMAGE 03.jpg" alt="Wedding Album">
+                <p>Captivating Engagement Album to cherish your memories.</p>
+            </div>
+            <div class="youtube-video"
+                onclick="window.open('https://drive.google.com/file/d/1mNc9hrrZwTcT7Kaa3DAJVV5WHPt3DTIp/view?usp=sharing')">
+                <img src="DEMO ALBUM IMAGES/PROCUCT IMAGE 04.jpg" alt="Baby Shower">
+                <p> Baby Shower Album </p>
+            </div>
+            <div class="youtube-video"
+                onclick="window.open('https://drive.google.com/file/d/1CD-qeEIvl5N1FFHSNRMTBMNkQZzTb2kN/view?usp=sharing')">
+                <img src="DEMO ALBUM IMAGES/PROCUCT IMAGE 05.jpg" alt="Vacation Album">
+                <p>Beautiful Wedding Album capturing your pssion.</p>
+            </div>
+            <div class="youtube-video"
+                onclick="window.open('https://drive.google.com/file/d/1Qt2SD9XsnOmJSHEp-ECTzDuyy9ylnyco/view?usp=sharing')">
+                <img src="DEMO ALBUM IMAGES/PROCUCT IMAGE 06.jpg" alt="Family Album">
+                <p>Heartwarming Family Album for timeless memories.</p>
+            </div>
+            <div class="youtube-video"
+                onclick="window.open('https://drive.google.com/file/d/1_W6VXDa90icFUnUTKPDN-aOEUcqIN6wP/view?usp=drive_link')">
+                <img src="DEMO ALBUM IMAGES/PROCUCT IMAGE 07.jpg" alt="Graduation Album">
+                <p>Birthday Album celebrating special moments.</p>
+            </div>
+            <div class="youtube-video"
+                onclick="window.open('https://drive.google.com/file/d/1kBCObxcRKoiISa9_R58vYlz5LeebJS6V/view?usp=drive_link')">
+                <img src="DEMO ALBUM IMAGES/PRODUCT IMAGE 01.jpg" alt="Travel Album">
+                <p>Memorable Graduation Album showcasing achievements.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+</body>
+
+<script src="loader.js"></script>
+
+</html>

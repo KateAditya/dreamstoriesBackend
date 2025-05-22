@@ -1,0 +1,108 @@
+.youtube-section {
+  text-align: center;
+  padding: 30px;
+  width: 90%;
+  height: auto;
+  /* Allow flexible height */
+  position: relative;
+  background-attachment: fixed;
+  background-color: rgba(245, 245, 245, 0.1);
+  /* Frosted glass effect */
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  /* Frosted glass */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #000000;
+  margin: 0 auto;
+  /* Center alignment */
+  transition: all 0.3s ease;
+  /* Smooth hover effect */
+  margin-top: 90px;
+}
+
+.youtube-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: rgb(137, 3, 3);
+}
+
+.youtube-section p {
+  margin-bottom: 30px;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+.youtube-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.youtube-video {
+  position: relative;
+  cursor: pointer;
+}
+
+.youtube-video img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: white;
+  background-color: rgba(230, 14, 14, 0.6);
+  border-radius: 50%;
+  padding: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Darken background on hover */
+  transform: translate(-50%, -50%) scale(1.2);
+  /* Slightly enlarge the icon */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  /* Add shadow effect */
+}
+
+
+
+
+
+
+button {
+  padding: 10px 20px;
+  background-color: #f09124;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  /* Space from the content */
+  position: relative;
+  left: 45%;
+}
+
+button:hover {
+  background-color: #d2d1d6;
+  /* Lighter shade for hover effect */
+  transform: scale(1.05);
+  /* Slightly increase size on hover */
+}
+
+button:focus {
+  outline: #f09124;
+  /* Remove the focus outline */
+}

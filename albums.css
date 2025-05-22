@@ -1,0 +1,158 @@
+
+
+.youtube-section {
+    text-align: center;
+    padding: 30px;
+    width: 90%;
+    height: auto;
+    /* Allow flexible height */
+    position: relative;
+    background-attachment: fixed;
+    background-color: rgba(245, 245, 245, 0.1);
+    /* Frosted glass effect */
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    /* Frosted glass */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #000000;
+    margin: 0 auto;
+    /* Center alignment */
+    transition: all 0.3s ease;
+    /* Smooth hover effect */
+    margin-top: 90px;  
+}
+
+.youtube-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: rgb(150, 5, 5);
+}
+
+.youtube-section p {
+    font-size: 1.1em;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Three items per row */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.youtube-video {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.youtube-video img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.youtube-video p {
+    font-size: 2em;
+    color: #555050;
+}
+
+.youtube-video:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .youtube-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Retain three columns, reduce gap */
+        gap: 15px;
+    }
+
+    .youtube-section h2 {
+        font-size: 1.6em;
+    }
+
+    .youtube-section p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .youtube-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on medium screens */
+        gap: 15px;
+    }
+
+    .youtube-section h2 {
+        font-size: 1.5em;
+    }
+
+    .youtube-section p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 768px) {
+    .youtube-grid {
+        grid-template-columns: 1fr;
+        /* One column on tablets */
+        gap: 20px;
+    }
+
+    .youtube-video {
+        padding: 15px;
+    }
+
+    .youtube-section h2 {
+        font-size: 1.4em;
+    }
+
+    .youtube-section p {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .youtube-section {
+        padding: 30px 10px;
+    }
+
+    .youtube-grid {
+        gap: 10px;
+    }
+
+    .youtube-video {
+        padding: 10px;
+    }
+
+    .youtube-section h2 {
+        font-size: 1.3em;
+    }
+
+    .youtube-section p {
+        font-size: 0.85em;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
